@@ -1,4 +1,4 @@
-import /init.bootmode.${ro.bootmode}.rc
+import /init.bootmode.${ro.boot.storagemedia}.rc
 import /init.recovery.${ro.hardware}.rc
 
 on early-init

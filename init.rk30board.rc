@@ -1,4 +1,4 @@
-import init.${ro.hardware}.bootmode.${ro.boot.mode}.rc
+import init.${ro.hardware}.bootmode.${ro.boot.storagemedia}.rc
 import init.rockchip.rc
 import init.connectivity.rc
 import init.box.samba.rc
@@ -266,13 +266,21 @@ on property:ro.boot.noril=true
     setprop ro.radio.noril true
     stop ril-daemon
 
+on property:ro.boot.storagemedia=emmc
+    insmod /drmboot.ko
+
 # set ro.bootmode
+on property:ro.boot.mode=normal
+    setprop ro.bootmode normal
+
 on property:ro.boot.mode=emmc
     setprop ro.bootmode normal
-    insmod /drmboot.ko
 
 on property:ro.boot.mode=unknown
     setprop ro.bootmode normal
+
+on property:ro.boot.mode=charger
+    setprop ro.bootmode charger
 
 # set ro.serialno
 on property:sys.serialno=*
