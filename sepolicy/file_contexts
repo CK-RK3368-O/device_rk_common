@@ -129,3 +129,5 @@
 
 #for hid audio
 /dev/hidraw0                u:object_r:hidraw_device:s0
+
+/vendor/bin/preinstall.sh     u:object_r:preinstall_exec:s0

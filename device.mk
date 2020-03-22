@@ -124,6 +124,9 @@ PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     hardware/broadcom/wlan/bcmdhd/config/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/preinstall.sh:vendor/bin/preinstall.sh
+
 #for ssv6051
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/wifi/ssv6xxx/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant.conf \

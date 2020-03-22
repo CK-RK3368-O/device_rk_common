@@ -48,3 +48,4 @@ ro.adb.secure =0
 camera2.portability.force_api=1
 #set wifi contry code
 ro.boot.wificountrycode=CN
+persist.sys.preinstalled=0

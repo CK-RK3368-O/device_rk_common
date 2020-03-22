@@ -348,3 +348,14 @@ service iso_operate /vendor/bin/iso
 service rk_store_keybox /vendor/bin/rk_store_keybox
     class main
     oneshot		
+
+service preinstall /vendor/bin/preinstall.sh
+     class main
+     user root
+     group root
+     disabled
+     oneshot
+     seclabel u:r:preinstall:s0 
+
+on property:sys.boot_completed=1
+     start   preinstall

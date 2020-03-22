@@ -1,0 +1,9 @@
+type preinstall, domain;
+type preinstall_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(preinstall)
+allow preinstall vendor_toolbox_exec:file { read execute open execute_no_trans };
+allow preinstall tty_device:chr_file {getattr ioctl open read write};
+allow preinstall sysfs:file {getattr ioctl open read write};
+allow preinstall shell_exec:file {getattr read};
+allow preinstall toolbox_exec:file {getattr read};
